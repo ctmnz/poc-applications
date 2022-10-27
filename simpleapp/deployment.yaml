@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simpleapp
-        image: ctmnz/simpleapp:osx
+        image: ctmnz/simpleapp:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
