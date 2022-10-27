@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: daniel-deployment
+  name: simpleapp-deployment
   labels:
-    app: daniel-app-label
+    app: simpleapp-label
   namespace: development
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: daniel-app-label
+      app: simpleapp-label
   template:
     metadata:
       labels:
-        app: daniel-app-label
+        app: simpleapp-label
     spec:
       containers:
       - name: daniel
