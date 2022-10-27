@@ -1,0 +1,53 @@
+
+    app: simple-app-label
+  namespace: development
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-app-label
+  template:
+    metadata:
+      labels:
+        app: simple-app-label
+    spec:
+      containers:
+      - name: simpleapp
+        image: ctmnz/simpleapp:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: simpleapp-service
+  namespace: development
+spec:
+  selector:
+    app: simpleapp-app-label
+  ports:
+    - port: 5000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-app-ingress
+  namespace: development
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      #    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  rules:
+  - host: simpleapp-ts.127.0.0.1.nip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: simpleapp-service
+            port:
+              number: 5000
