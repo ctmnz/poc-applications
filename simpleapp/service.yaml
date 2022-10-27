@@ -4,8 +4,9 @@ metadata:
   name: simpleapp-service
   namespace: development
 spec:
-apiVersion: networking.k8s.io/v1
   selector:
     app: simpleapp-app-label
   ports:
     - port: 5000
+
+
