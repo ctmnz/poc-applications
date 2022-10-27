@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleapp-deployment
+  labels:
+    app: simple-app-label
+  namespace: development
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-app-label
+  template:
+    metadata:
+      labels:
+        app: simple-app-label
+    spec:
+      containers:
+      - name: simpleapp
+        image: ctmnz/simpleapp:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
