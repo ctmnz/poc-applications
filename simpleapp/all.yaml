@@ -1,18 +1,30 @@
-
-    app: simple-app-label
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app.kuernetes.io/name: development
+  name: development
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daniel-deployment
+  labels:
+    app: daniel-app-label
   namespace: development
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: simple-app-label
+      app: daniel-app-label
   template:
     metadata:
       labels:
-        app: simple-app-label
+        app: daniel-app-label
     spec:
       containers:
-      - name: simpleapp
+      - name: daniel
         image: ctmnz/simpleapp:latest
         imagePullPolicy: Always
         ports:
@@ -21,18 +33,18 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: simpleapp-service
+  name: daniel-service
   namespace: development
 spec:
   selector:
-    app: simpleapp-app-label
+    app: daniel-app-label
   ports:
     - port: 5000
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: simple-app-ingress
+  name: daniel-app-ingress
   namespace: development
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -41,13 +53,13 @@ metadata:
       #    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   rules:
-  - host: simpleapp-ts.127.0.0.1.nip.io
+  - host: simpleapp.127.0.0.1.nip.io
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: simpleapp-service
+            name: daniel-service
             port:
               number: 5000
