@@ -1,7 +1,8 @@
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: simple-app-ingress
+  name: daniel-app-ingress
   namespace: development
   annotations:
     kubernetes.io/ingress.class: nginx
@@ -17,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: simpleapp-service
+            name: daniel-service
             port:
               number: 5000

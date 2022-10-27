@@ -1,22 +1,23 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simpleapp-deployment
+  name: daniel-deployment
   labels:
-    app: simple-app-label
+    app: daniel-app-label
   namespace: development
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: simple-app-label
+      app: daniel-app-label
   template:
     metadata:
       labels:
-        app: simple-app-label
+        app: daniel-app-label
     spec:
       containers:
-      - name: simpleapp
+      - name: daniel
         image: ctmnz/simpleapp:latest
         imagePullPolicy: Always
         ports:

@@ -1,12 +1,12 @@
+---
 kind: Service
 apiVersion: v1
 metadata:
-  name: simpleapp-service
+  name: daniel-service
   namespace: development
 spec:
   selector:
-    app: simpleapp-app-label
+    app: daniel-app-label
   ports:
     - port: 5000
-
 
