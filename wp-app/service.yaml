@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: wp-demo-service
+  namespace: wp-demo
+spec:
+  selector:
+    app: wp-label
+  ports:
+    - port: 80

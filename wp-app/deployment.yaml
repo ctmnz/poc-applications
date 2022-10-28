@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wp-deployment
+  labels:
+    app: wp-label
+  namespace: wp-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wp-label
+  template:
+    metadata:
+      labels:
+        app: wp-label
+    spec:
+      containers:
+      - name: wp-demo
+        image: wordpress:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
