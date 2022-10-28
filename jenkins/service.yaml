@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jenkins-demo-service
+  namespace: jenkins-demo
+spec:
+  selector:
+    app: jenkins-label
+  ports:
+    - port: 8080

@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-deployment
+  labels:
+    app: jenkins-label
+  namespace: jenkins-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-label
+  template:
+    metadata:
+      labels:
+        app: jenkins-label
+    spec:
+      containers:
+      - name: jenkins-demo
+        image: jenkins:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
