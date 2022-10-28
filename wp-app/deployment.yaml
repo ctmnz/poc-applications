@@ -51,7 +51,7 @@ spec:
     spec:
       containers:
       - name: wpdb-demo
-        image: mysql:5.7
+        image: mysql:8
         imagePullPolicy: Always
         ports:
         - containerPort: 3306
