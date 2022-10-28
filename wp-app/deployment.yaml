@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -48,11 +49,11 @@ spec:
       - name: wpdb-demo
         image: mysql:5.7
         imagePullPolicy: Always
-        ports:
-        - containerPort: 3306
-	environment:
-          MYSQL_DATABASE: exampledb
-          MYSQL_USER: exampleuser
-          MYSQL_PASSWORD: examplepass
-          MYSQL_RANDOM_ROOT_PASSWORD: '1'
+      ports:
+      - containerPort: 3306
+      environment:
+        MYSQL_DATABASE: exampledb
+        MYSQL_USER: exampleuser
+        MYSQL_PASSWORD: examplepass
+        MYSQL_RANDOM_ROOT_PASSWORD: '1'
 
