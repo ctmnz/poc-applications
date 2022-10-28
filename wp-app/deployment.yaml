@@ -20,17 +20,17 @@ spec:
       - name: wp-demo
         image: wordpress:latest
         imagePullPolicy: Always
-        ports:
-        - containerPort: 80
- 	env:
-        - name: WORDPRESS_DB_HOST
-          value: wpdb-service
-        - name: WORDPRESS_DB_USER
-          value: exampleuser
-        - name: WORDPRESS_DB_PASSWORD
-          value: examplepass
-        - name: WORDPRESS_DB_NAME
-          value: exampledb
+      ports:
+      - containerPort: 80
+      env:
+      - name: WORDPRESS_DB_HOST
+        value: wpdb-service
+      - name: WORDPRESS_DB_USER
+        value: exampleuser
+      - name: WORDPRESS_DB_PASSWORD
+        value: examplepass
+      - name: WORDPRESS_DB_NAME
+        value: exampledb
 ---
 apiVersion: apps/v1
 kind: Deployment
