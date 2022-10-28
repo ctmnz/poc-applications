@@ -8,3 +8,14 @@ spec:
     app: wp-label
   ports:
     - port: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: wpdb-service
+  namespace: wp-demo
+spec:
+  selector:
+    app: wpdb-label
+  ports:
+    - port: 3306
