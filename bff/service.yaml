@@ -1,0 +1,12 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: bff-service
+  namespace: development
+spec:
+  selector:
+    app: bff-label
+  ports:
+    - port: 8080
+
