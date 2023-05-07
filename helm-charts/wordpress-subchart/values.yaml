@@ -10,9 +10,7 @@ service:
   sessionAffinity: None
   sessionAffinityConfig: {}
   clusterIP: ""
-  loadBalancerIP: ""
-  loadBalancerSourceRanges: []
-  externalTrafficPolicy: Cluster
+  externalTrafficPolicy: Local
   annotations: {}
   extraPorts: []
 
