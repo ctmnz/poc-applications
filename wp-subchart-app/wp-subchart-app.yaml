@@ -2,25 +2,24 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: wp-subchart
-  namespace: wp-subchart-ns
 spec:
   destination:
     namespace: wp-subchart-ns
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: wordpress-subchart/ 
-    repoURL: https://github.com/ctmnz/poc-applications/helm-charts
-    targetRevision: master
+    path: helm-charts/wordpress-subchart/ 
+    repoURL: https://github.com/ctmnz/poc-applications/
+    targetRevision: main
   sync:
     comparedTo:
       destination:
-        namespace: test
+        namespace: wp-subchart-ns
         server: https://kubernetes.default.svc
       source:
-        path: wordpress-subchart/
-        repoURL: https://github.com/ctmnz/poc-applications/helm-charts
-        targetRevision: master
+        path: helm-charts/wordpress-subchart/
+        repoURL: https://github.com/ctmnz/poc-applications/
+        targetRevision: main
   syncPolicy:
     automated:
       prune: true
