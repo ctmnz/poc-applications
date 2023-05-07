@@ -3,7 +3,7 @@ mariadb:
   architecture: standalone
   auth:
     rootPassword: ""
-    database: bitnami_wordpress_daniel
+    database: wp_daniel
     username: wp-user
     password: ""
   primary:
