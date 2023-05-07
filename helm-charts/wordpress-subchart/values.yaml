@@ -1,32 +1,14 @@
 wordpress:
   service:
     type: ClusterIP
-    ports:
-      http: 80
-      https: 443
-    httpsTargetPort: https
-    sessionAffinity: None
-    sessionAffinityConfig: {}
     externalTrafficPolicy: Local
-    #loadBalancerIP: "127.0.0.1"
-    annotations: {}
-    extraPorts: []
 
   mariadb:
     enabled: true
-    architecture: standalone
-    auth:
-      rootPassword: ""
-      username: wp-user
-      password: ""
-    primary:
-      persistence:
-        enabled: true
-        storageClass: ""
-        accessModes:
-          - ReadWriteOnce
-        size: 8Gi
-
+  
+  memcached:
+    enabled: true
+  
   ingress:
     enabled: true
     pathType: Prefix
@@ -39,11 +21,3 @@ wordpress:
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     tls: true
     selfSigned: true
-  memcached:
-    enabled: true
-    auth:
-      enabled: false
-      username: ""
-      password: ""
-    service:
-      port: 11211
