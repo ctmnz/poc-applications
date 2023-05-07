@@ -39,3 +39,11 @@ wordpress:
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     tls: true
     selfSigned: true
+  memcached:
+    enabled: true
+    auth:
+      enabled: false
+      username: ""
+      password: ""
+    service:
+      port: 11211
