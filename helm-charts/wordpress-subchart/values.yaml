@@ -1,5 +1,5 @@
 service:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     http: 80
     https: 443
@@ -7,6 +7,7 @@ service:
   sessionAffinity: None
   sessionAffinityConfig: {}
   externalTrafficPolicy: Local
+  loadBalancerIP: "127.0.0.1"
   annotations: {}
   extraPorts: []
 
