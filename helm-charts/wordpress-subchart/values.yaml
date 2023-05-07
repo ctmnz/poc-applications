@@ -17,7 +17,6 @@ wordpress:
     architecture: standalone
     auth:
       rootPassword: ""
-      database: wp_daniel
       username: wp-user
       password: ""
     primary:
