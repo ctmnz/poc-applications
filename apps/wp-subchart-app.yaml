@@ -14,5 +14,8 @@ spec:
     repoURL: https://github.com/ctmnz/poc-applications/
     targetRevision: main
   syncPolicy:
+    automated:
+      prune: true
+      selfheal: true
     syncOptions:
     - CreateNamespace=true
