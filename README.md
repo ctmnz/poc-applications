@@ -17,3 +17,6 @@ kubectl get secret wp-staging-wordpress -n wp-staging -o jsonpath="{.data.wordpr
 
 kubectl get secret -n airflow-dev airflow-dev -o jsonpath="{.data.airflows-password}" | base64 --decode
 
+kubectl get secret -n dokuwiki-dev dokuwiki-dev -o jsonpath="{.data.dokuwiki-password}" | base64 --decode
+
+kubectl get secrets -n drupal-dev drupal-dev -o jsonpath="{.data.drupal-password}" | base64 --decode
