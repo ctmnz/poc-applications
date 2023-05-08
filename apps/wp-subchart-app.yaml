@@ -13,18 +13,6 @@ spec:
     path: helm-charts/wordpress-subchart/ 
     repoURL: https://github.com/ctmnz/poc-applications/
     targetRevision: main
-  sync:
-    comparedTo:
-      destination:
-        namespace: wp-subchart-ns
-        server: https://kubernetes.default.svc
-      source:
-        path: helm-charts/wordpress-subchart/
-        repoURL: https://github.com/ctmnz/poc-applications/
-        targetRevision: main
   syncPolicy:
-    automated:
-      prune: true
-      selfheal: true
     syncOptions:
     - CreateNamespace=true
