@@ -13,7 +13,7 @@ wordpress:
     enabled: true
     pathType: Prefix
     apiVersion: "networking.k8s.io/v1"
-    hostname: wordpress.127.0.0.1.nip.io
+    hostname: wordpress-prod.127.0.0.1.nip.io
     path: '/'
     annotations:
       kubernetes.io/ingress.class: nginx

@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: wp-dev
+  name: wp-prod
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: wp-dev
+    namespace: wp-prod
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm-charts/wordpress-subchart/ 
+    path: helm-charts/wordpress-prod/ 
     repoURL: https://github.com/ctmnz/poc-applications/
     targetRevision: main
   syncPolicy:
