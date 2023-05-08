@@ -2,6 +2,7 @@ dokuwiki:
   service:
     type: ClusterIP
     externalTrafficPolicy: Local
+  dokuwikiWikiName: This is cool wiki
 
   ingress:
     enabled: true
