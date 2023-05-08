@@ -1,4 +1,4 @@
-wordpress:
+dokuwiki:
   service:
     type: ClusterIP
     externalTrafficPolicy: Local
