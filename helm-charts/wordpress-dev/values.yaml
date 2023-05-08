@@ -7,7 +7,7 @@ wordpress:
     enabled: true
   
   memcached:
-    enabled: true
+    enabled: false
   
   ingress:
     enabled: true
