@@ -1,4 +1,4 @@
-wordpress:
+keycloak:
   service:
     type: ClusterIP
     externalTrafficPolicy: Local
