@@ -20,3 +20,5 @@ kubectl get secret -n airflow-dev airflow-dev -o jsonpath="{.data.airflows-passw
 kubectl get secret -n dokuwiki-dev dokuwiki-dev -o jsonpath="{.data.dokuwiki-password}" | base64 --decode
 
 kubectl get secrets -n drupal-dev drupal-dev -o jsonpath="{.data.drupal-password}" | base64 --decode
+
+kubectl get secret -n keycloak-dev keycloak-dev -o jsonpath="{.data.admin-password}" | base64 --decode

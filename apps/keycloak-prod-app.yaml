@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: keycloak-prod
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: keycloak-prod
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: helm-charts/keycloak-prod/ 
+    repoURL: https://github.com/ctmnz/poc-applications/
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
