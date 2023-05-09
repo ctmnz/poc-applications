@@ -22,3 +22,5 @@ kubectl get secret -n dokuwiki-dev dokuwiki-dev -o jsonpath="{.data.dokuwiki-pas
 kubectl get secrets -n drupal-dev drupal-dev -o jsonpath="{.data.drupal-password}" | base64 --decode
 
 kubectl get secret -n keycloak-dev keycloak-dev -o jsonpath="{.data.admin-password}" | base64 --decode
+kubectl get secret -n keycloak-prod keycloak-prod -o jsonpath="{.data.admin-password}" | base64 --decode
+kubectl get secret -n keycloak-staging keycloak-staging -o jsonpath="{.data.admin-password}" | base64 --decode
