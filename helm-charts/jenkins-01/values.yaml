@@ -2,6 +2,9 @@ jenkins:
   service:
     type: ClusterIP
     externalTrafficPolicy: Local
+
+  jenkinsUser: Daniel
+  jenkinsPassword: "pass"
   
   ingress:
     enabled: true
