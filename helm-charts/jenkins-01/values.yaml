@@ -1,4 +1,4 @@
-wordpress:
+jenkins:
   service:
     type: ClusterIP
     externalTrafficPolicy: Local
