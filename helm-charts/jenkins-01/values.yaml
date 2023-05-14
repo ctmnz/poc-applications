@@ -3,8 +3,8 @@ jenkins:
     type: ClusterIP
     externalTrafficPolicy: Local
 
-  jenkinsUser: Daniel
-  jenkinsPassword: "pass"
+  jenkinsUser: daniel
+  jenkinsPassword: "password"
   
   ingress:
     enabled: true
