@@ -1,5 +1,5 @@
 # poc-applications
-
+```shell
 argocd app create apps \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
@@ -26,3 +26,4 @@ kubectl get secrets -n drupal-dev drupal-dev -o jsonpath="{.data.drupal-password
 kubectl get secret -n keycloak-dev keycloak-dev -o jsonpath="{.data.admin-password}" | base64 --decode
 kubectl get secret -n keycloak-prod keycloak-prod -o jsonpath="{.data.admin-password}" | base64 --decode
 kubectl get secret -n keycloak-staging keycloak-staging -o jsonpath="{.data.admin-password}" | base64 --decode
+```
