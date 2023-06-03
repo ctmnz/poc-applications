@@ -21,10 +21,11 @@ airflow:
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     tls: true
     selfSigned: true
-  dags:
-    enabled: true
-    repositories:
-      - repository: "https://github.com/ctmnz/dag-experiments.git"
-        branch: "main"
-        name: "dag-experiments-name"
-        path: "/"
+  git:
+    dags:
+      enabled: true
+      repositories:
+        - repository: "https://github.com/ctmnz/dag-experiments.git"
+          branch: "main"
+          name: "dag-experiments-name"
+          path: "/"
