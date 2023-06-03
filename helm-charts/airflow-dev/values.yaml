@@ -22,7 +22,7 @@ airflow:
     tls: true
     selfSigned: true
   dags:
-    enabled: false
+    enabled: true
     repositories:
       - repository: "https://github.com/ctmnz/dag-experiments.git"
         branch: "main"
