@@ -29,3 +29,25 @@ airflow:
           branch: "main"
           name: "dag-experiments-name"
           path: "/"
+
+  web: &requirements-volume-config
+    extraVolumeMounts: 
+      - name: requirements
+        mountPath: /bitnami/python/requirements.txt
+        subPath: requirements.txt
+    extraVolumes:
+      - name: requirements
+        configMap:
+          name: airflow-requirements
+  scheduler: *requirements-volume-config
+  worker: *requirements-volume-config
+
+  extraDeploy:
+    - apiVersion: v1
+      kind: ConfigMap
+      metadata:
+        name: airflow-requirements
+      data:
+        requirements.txt: |
+          apache-airflow-providers-google
+
